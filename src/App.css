@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.css';
+
 .App {
   text-align: center;
 }
@@ -20,3 +22,24 @@
 .App-link {
   color: #09d3ac;
 }
+
+.header {
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.video-box {
+  background: #eee;
+  padding: 30px;
+  border: 2px solid #ddd;
+  margin-top: 20px;
+}
+
+#localVideo, #remoteVideo {
+  width: 360px;
+  height: 300px;
+}
+

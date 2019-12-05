@@ -1,0 +1,19 @@
+.tabs {
+  background: #fff;
+  border: 2px solid #dddddd;
+}
+
+.tab-pane {
+  padding: 20px;
+}
+
+.send-btn {
+  margin-top: 20px;
+}
+
+.chat-room {
+  border: 2px #eee solid;
+  width:  100%;
+  height: 200px;
+  margin-bottom: 20px;
+}
