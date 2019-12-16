@@ -37,6 +37,7 @@ io.on('connection', function (socket) {
   })
   // 对方同意视频互动
   socket.on('agree interact', function (data) {
+    console.log(data);
     socket.to(data.from.userId).emit('agree interact', data)
   })
   socket.on('refuse interact', function (data) {
