@@ -302,6 +302,7 @@ class App extends React.Component {
     const list = peerList;
     let other = isCreatedOffer ? data.to : data.from; // 对方
     if (!peerList[other.userId]) {
+      // 每一个调用需要为每个端创建一个RTCPeerConnection对象
       let pc = new RTCPeerConnection(this.state.pcConfig);
       pc.from = data.from;
       pc.to = data.to;
@@ -320,6 +321,8 @@ class App extends React.Component {
 
   // 创建连接
   createConnect  = (isCreatedOffer, pc) => {
+    // 获取和分享网络信息：可能的连接端点，也就是ICE候选
+    // 创建一个RTCPeerConnection对象，绑定一个onicecandidate事件的处理器
     pc.addEventListener('icecandidate', event => {
       console.log('icecandidate event:', event)
       if (event.candidate) {
@@ -334,6 +337,7 @@ class App extends React.Component {
       }
     })
     if (this.state.localStream) {
+      // 本地流
       pc.addStream((this.state.localStream))
     } else {
       this.onStartLocalStream(this.addStreamToLocalPc(pc))

@@ -70,11 +70,11 @@ class UserJoinRoom extends React.Component {
             加入聊天室
           </Button>
         </Form.Item>
-        <Form.Item>
+        {/* <Form.Item>
           <Button type="primary" onClick={this.handleJoinRoom}>
             离开聊天室
           </Button>
-        </Form.Item>
+        </Form.Item> */}
         <Form.Item>
           <Button type="primary" onClick={this.handleStartLocalStream}>
             采集本地视频
